@@ -99,7 +99,7 @@ body.dark{background:#111;color:#fff}body.dark .card,body.dark .stats,body.dark 
 <div class="search"><input id="searchInput" placeholder="ابحث عن خبر..." oninput="doSearch()"><button onclick="doSearch()">بحث</button></div>
 <nav id="mainNav"><button onclick="filterCat('الكل',this)" class="active">الرئيسية</button><span id="navCats"></span><button onclick="openArchive()">📂 الأرشيف - لا ينحذف</button><button onclick="openAuthorsPage()">✍️ كُتابنا</button><button onclick="openPagesMenu()">📄 صفحاتنا</button><button onclick="openStaticPage('about')">من نحن</button><button onclick="openStaticPage('contact')">تواصل معنا</button></nav>
 <div id="homePage">
-<div class="ticker"><b>عاجل الآن</b><div class="ticker-viewport"><div class="ticker-inner" id="jayshanTickerTrack">جاري تحميل آخر الأخبار...</div></div></div>
+<div class="ticker"><b>آخر الأخبار</b><div class="ticker-viewport"><div class="ticker-inner" id="jayshanTickerTrack">جاري تحميل آخر الأخبار...</div></div></div>
 <div class="stats"><div>👁️ زوار الموقع<b id="visitors">21480</b></div><div>❤️ إعجابات<b>619</b></div><div>✈️ مشاركات<b>257</b></div><div>📰 أخبار<b id="newsCount">0</b></div></div>
 <div id="loginBox"><h3>🔐 دخول المدير</h3><input type="password" id="adminPass" placeholder="أدخل كلمة السر"><button class="publish" onclick="checkAdminPass()">دخول</button></div>
 <div class="admin" id="adminBox">
@@ -217,7 +217,28 @@ window.editNews=function(key){const idx=allKeys.indexOf(key);const n=allNews[idx
 window.deleteNews=(key)=>{if(confirm('حذف الخبر نهائياً من الأرشيف أيضاً؟'))remove(ref(db,'news/'+key))};
 function renderAdmin(){const box=document.getElementById('adminList');if(!box)return;box.innerHTML=allNews.map((n,i)=>{let k=allKeys[i];return `<div class="admin-item"><b>${escapeHtml(n.title)} - ${n.cat}</b><div><button onclick="editNews('${k}')" style="background:#ffcc00;border:0;padding:6px 10px;border-radius:6px">تعديل</button> <button onclick="deleteNews('${k}')" style="background:#c00000;color:#fff;border:0;padding:6px 10px;border-radius:6px">حذف</button></div></div>`}).join('');const urg=document.getElementById('adminUrgentList');if(urg){let list=allNews.filter(n=>n.cat==='عاجل');urg.innerHTML=list.length?list.map(n=>`<div class="admin-item"><b>${escapeHtml(n.title)}</b></div>`).join(''):'<p>لا توجد أخبار عاجلة</p>'};const total=document.getElementById('statTotal');if(total)total.innerText=allNews.length;const su=document.getElementById('statUrgent');if(su)su.innerText=allNews.filter(n=>n.cat==='عاجل').length;const st=document.getElementById('statToday');if(st){let today=new Date().toDateString();st.innerText=allNews.filter(n=>new Date(n.time).toDateString()===today).length}}
 function renderList(list){const box=document.getElementById('newsList');box.innerHTML='';if(!list.length){box.innerHTML='<p style="text-align:center;color:#888;padding:20px">لا توجد أخبار</p>';return}list.forEach((n,i)=>{let media=n.video?`<div>🎬 فيديو - <a href="${n.video}" target="_blank" style="color:#fff">شاهد</a></div>`:`<img class="main" src="${n.image}" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800'">`;box.innerHTML+=`<div class="card" onclick="openNewsByKey('${allKeys[allNews.indexOf(n)]}')"><div class="thumb">${media}</div><div class="c-body"><div style="display:flex;justify-content:space-between"><span class="badge">${n.cat}</span><span class="date">${new Date(n.time).toLocaleDateString('ar')}</span></div><h2>${escapeHtml(n.title)}</h2><p>${escapeHtml((n.text||'').substring(0,120))}...</p><div style="font-size:12px;color:#777">👁️ ${n.views||0} | ✍️ ${escapeHtml(n.author||'قسم الأخبار - جيشان برس')}</div></div></div>`})}
-function buildTicker(list){const t=document.getElementById('jayshanTickerTrack');if(!t)return;let items=(list||[]).slice(0,20).map(n=>`<span><i>${escapeHtml(n.cat||'عاجل')} ///</i>${escapeHtml(n.ticker||n.title)}</span>`);if(!items.length)items=['<span><i>جيشان برس ///</i>صوت الجنوب يصل للعالم</span>'];let links=`<span><a class="link-wa" href="https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36" target="_blank">💬 تابعنا على واتساب - جيشان برس</a></span><span><a class="link-x" href="https://x.com/JayshanNewsYE" target="_blank">𝕏 تابعنا على إكس @JayshanNewsYE</a></span><span><a class="link-fb" href="https://www.facebook.com/profile.php?id=61593721652626" target="_blank">📘 تابعنا على فيسبوك - جيشان برس</a></span><span><a class="link-mail" href="mailto:bkra7567@gmail.com">📧 راسلنا: bkra7567@gmail.com</a></span>`;let one=items.join('')+links;t.innerHTML=one+one}
+function buildTicker(list){
+  const t=document.getElementById('jayshanTickerTrack');
+  if(!t) return;
+  const colors={'عاجل':'#D21034','أخبار الجنوب':'#0077CC','أخبار العالم':'#FF6B00','مقالات':'#1A9A3A','تقارير':'#7B2CBF','رياضة':'#009688','اقتصاد':'#B8860B','فيديوهات':'#111111'};
+  let items=(list||[]).slice(0,20).map(n=>{
+    const cat=n.cat||'أخبار الجنوب';
+    const col=colors[cat]||'#A6192E';
+    let text='';
+    if(cat==='مقالات'){
+      let a=(n.author||'جيشان برس').replace(/^(بقلم|كتب:|كتب بقلم|بقلم:)\s*/,'').trim();
+      text='كتب: '+escapeHtml(a)+' | مقال بعنوان: '+escapeHtml(n.title||'');
+    } else {
+      let raw=(n.ticker||n.title||'').replace(/^(عاجل\s*[:\-–—|]\s*|عاجل\s+)/,'').trim();
+      text=escapeHtml(raw);
+    }
+    return `<span style="cursor:pointer" onclick="openNewsByKey('${allKeys[allNews.indexOf(n)]}')"><i style="background:${col};color:#fff;padding:4px 10px;border-radius:4px;font-style:normal">${escapeHtml(cat)}</i> ${text}</span>`;
+  });
+  if(!items.length) items=['<span><i>جيشان برس ///</i>صوت الجنوب يصل للعالم</span>'];
+  let links=`<span><a class="link-wa" href="https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36" target="_blank">💬 تابعنا على واتساب - جيشان برس</a></span><span><a class="link-x" href="https://x.com/JayshanNewsYE" target="_blank">𝕏 تابعنا على إكس @JayshanNewsYE</a></span><span><a class="link-fb" href="https://www.facebook.com/profile.php?id=61593721652626" target="_blank">📘 تابعنا على فيسبوك - جيشان برس</a></span><span><a class="link-mail" href="mailto:bkra7567@gmail.com">📧 راسلنا: bkra7567@gmail.com</a></span>`;
+  let one=items.join('')+links;
+  t.innerHTML=one+one;
+}
 window.openNewsByKey=function(key){const idx=allKeys.indexOf(key);if(idx===-1)return;const n=allNews[idx];currentNews=n;currentKey=key;history.replaceState(null,'','/news/'+key);document.getElementById('homePage').style.display='none';document.getElementById('detailPage').style.display='block';document.getElementById('dMedia').innerHTML=n.video?`<div style="background:#000;color:#fff;padding:40px;text-align:center"><a href="${n.video}" target="_blank" style="color:#fff">▶️ شاهد الفيديو</a></div><img src="${n.image}" style="width:100%;max-height:320px;object-fit:cover">`:`<img src="${n.image}" style="width:100%;max-height:320px;object-fit:cover">`;document.getElementById('dTitle').innerText=n.title;document.getElementById('dText').innerText=n.text;document.getElementById('dCat').innerText=n.cat;document.getElementById('dMeta').innerText=new Date(n.time).toLocaleDateString('ar')+' | ✍️ '+(n.author||'قسم الأخبار - جيشان برس')+' | 👁️ '+(n.views||0);try{runTransaction(ref(db,'news/'+key+'/views'),c=>(c||0)+1)}catch(e){}window.scrollTo(0,0)};
 window.goHome=function(){['detailPage','authorPage','authorsPage','staticPage','archivePage','pagesMenuPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('homePage').style.display='block';history.replaceState(null,'','/');window.scrollTo(0,0)};
 window.openArchive=function(){document.getElementById('homePage').style.display='none';['detailPage','authorPage','authorsPage','staticPage','pagesMenuPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('archivePage').style.display='block';renderArchive();window.scrollTo(0,0)};
@@ -231,4 +252,4 @@ window.shareWA=function(){if(currentNews)window.open('https://wa.me/?text='+enco
 onValue(ref(db,'news'),(snap)=>{const d=snap.val();if(!d){allNews=[];allKeys=[];buildTicker([]);renderList([]);return}allKeys=Object.keys(d).reverse();allNews=allKeys.map(k=>d[k]);document.getElementById('newsCount').innerText=allNews.length;buildTicker(allNews);renderFiltered();renderAdmin();let pid=new URLSearchParams(location.search).get('id');if(!pid && location.pathname.indexOf('/news/')===0) pid=location.pathname.replace('/news/','').replace('/','');if(pid&&allKeys.includes(pid))openNewsByKey(pid)});
 </script>
 </body>
-                                                                                                                                                                         </html>
+</html>
