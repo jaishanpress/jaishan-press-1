@@ -2,187 +2,100 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>جيشان برس | JAISHAN PRESS</title>
-<link rel="icon" href="logo.jpg">
-<meta property="og:title" content="جيشان برس | JAISHAN PRESS">
-<meta property="og:description" content="صوت الجنوب يصل للعالم - جيشان برس">
-<meta property="og:image" content="logo.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="جيشان برس | JAISHAN PRESS">
-<meta name="twitter:description" content="صوت الجنوب يصل للعالم - جيشان برس">
-<meta name="twitter:image" content="logo.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جيشان برس | Jaishan Press</title>
 <style>
-*{box-sizing:border-box}body{font-family:'Segoe UI',Tahoma,sans-serif;background:#fff;margin:0;padding-bottom:70px;color:#111}
-.topbar{background:#A6192E;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:6px 14px;font-size:12px}
-.topbar button{background:#fff;color:#A6192E;border:0;padding:6px 12px;border-radius:20px;cursor:pointer;font-weight:bold;font-size:12px}
-/* ===== هيدر عدن الغد ===== */
-.site-header{position:sticky;top:0;z-index:99;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);border-bottom:3px solid #A6192E}
-.header-main{display:flex;align-items:center;gap:16px;padding:10px 14px;flex-wrap:wrap}
-.header-logo{display:flex;align-items:center;gap:12px;cursor:pointer;flex-shrink:0}
-.header-logo img{width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid #A6192E;background:#fff}
-.header-logo-text h1{margin:0;color:#A6192E;font-size:32px;line-height:1;font-weight:900}
-.header-logo-text p{margin:4px 0 0;font-size:12px;color:#555}
-.header-logo-text b{letter-spacing:2px;font-size:12px}
-.header-logo-text small{color:#888}
-.header-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;flex:1}
-.header-nav button{background:#111;color:#fff;border:0;padding:10px 14px;border-radius:20px;cursor:pointer;font-family:inherit;font-weight:700;font-size:13px;white-space:nowrap}
-.header-nav button.active,.header-nav button:hover{background:#A6192E}
-.header-actions{display:flex;flex-direction:column;gap:8px;min-width:260px;flex-shrink:0}
-.header-actions .search{padding:0;background:none}
-.header-social{display:flex;gap:6px}
-.header-social a{color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 10px;border-radius:20px;flex:1;text-align:center}
-.search{display:flex;gap:8px;padding:10px;background:#f4f4f4}
-.search input{flex:1;padding:12px;border-radius:30px;border:1px solid #ddd;font-family:inherit}
-.search button{background:#A6192E;color:#fff;border:0;padding:0 20px;border-radius:30px;font-weight:bold;cursor:pointer}
-.ticker{display:flex;background:#000;color:#fff;overflow:hidden;border-bottom:2px solid #A6192E;align-items:stretch}
-.ticker b{background:#A6192E;padding:12px 16px;white-space:nowrap;font-size:15px;z-index:2;flex-shrink:0}
-.ticker-viewport{overflow:hidden;flex:1;direction:ltr;display:flex;align-items:center;min-width:0}
-.ticker-inner{display:flex;white-space:nowrap;width:max-content;animation:sc 90s linear infinite;will-change:transform;direction:ltr}
-.ticker-inner:hover{animation-play-state:paused}
-.ticker-inner span{padding:0 28px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:6px;direction:rtl}
-.ticker-inner span i{font-style:normal;color:#FFD100;padding-left:8px}
-.ticker-inner a{color:#fff;text-decoration:none}
-.ticker-inner .link-wa{color:#25D366}.ticker-inner .link-x{color:#fff}.ticker-inner .link-fb{color:#5ea2ff}.ticker-inner .link-mail{color:#FFD100}
-@keyframes sc{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.stats{background:#f7f7f7;margin:12px;border:1px solid #eee;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:14px;gap:10px}
-.stats div{font-size:12px;color:#666}.stats b{display:block;font-size:20px;color:#A6192E;margin-top:4px}
-.section-title{margin:18px 12px 6px;font-size:20px;font-weight:900;border-right:5px solid #A6192E;padding-right:10px}
-.card{background:#fff;margin:10px 12px;border-bottom:1px solid #eee;padding-bottom:12px;display:flex;gap:12px;cursor:pointer;align-items:flex-start}
-.card .thumb{width:120px;min-width:120px;height:95px;overflow:hidden;border-radius:4px;flex-shrink:0;background:#eee}
-.card img.main{width:100%;height:100%;object-fit:cover;display:block}
-.card .thumb div{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;color:#fff;font-size:13px;text-align:center;padding:6px}
-.card .c-body{flex:1;min-width:0}.card h2{font-size:17px;line-height:1.6;margin:6px 0;color:#111}
-.card p{color:#666;line-height:1.7;font-size:13px;margin:0}
-.badge{background:#A6192E;color:#fff;padding:3px 10px;border-radius:3px;font-size:11px;font-weight:bold}
-.date{font-size:11px;color:#999}
-.catsRow button{margin:3px;padding:8px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer;font-family:inherit}
-.admin{background:#f2f2f2;margin:10px;padding:0;border:1px solid #ddd;display:none;border-radius:10px;overflow:hidden}
-.admin-head{background:#A6192E;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
-.admin-head h3{margin:0;font-size:18px}
-.admin-head span{font-size:12px;background:#fff;color:#A6192E;padding:5px 10px;border-radius:20px;font-weight:bold}
-.admin-wrap{display:flex;gap:0}
-.admin-side{background:#111;color:#fff;width:190px;min-width:190px;padding:12px 0}
-.admin-side button{display:block;width:100%;text-align:right;background:none;border:0;color:#fff;padding:13px 16px;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;border-right:4px solid transparent}
-.admin-side button.active,.admin-side button:hover{background:#A6192E;border-right-color:#FFD100}
-.admin-main{flex:1;background:#fff;padding:16px;min-width:0}
-.admin-stat{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.admin-stat div{background:#f7f7f7;border:1px solid #eee;text-align:center;padding:12px;border-radius:8px;font-size:12px;color:#666}
-.admin-stat b{display:block;font-size:20px;color:#A6192E;margin-top:4px}
-.admin label{font-weight:800;font-size:13px;display:block;margin-top:10px}
-input,textarea,select{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:8px;font-family:inherit}
-.publish{background:#A6192E;color:#fff;border:0;padding:14px;border-radius:8px;width:100%;font-size:17px;cursor:pointer;font-weight:900}
-.admin-item{background:#f9f9f9;border:1px solid #eee;padding:10px;border-radius:8px;margin:8px 0;display:flex;justify-content:space-between;gap:8px}
-.detail{background:#fff;margin:10px}.detail img{width:100%;height:280px;object-fit:cover}
-.detail .d-body{padding:16px}.detail h1{font-size:23px;line-height:1.6}.detail p{line-height:1.9;font-size:16px;white-space:pre-line}
-.back{background:#111;color:#fff;border:0;padding:11px 16px;border-radius:8px;cursor:pointer;margin:10px}
-.footer{background:#111;color:#ccc;text-align:center;padding:20px 12px 70px;font-size:13px;line-height:1.9}
-.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:20}
-.bottom button{flex:1;border:0;color:#fff;padding:13px 0;cursor:pointer;font-family:inherit;font-weight:bold}
-#loginBox{display:none;background:#fff;margin:10px;padding:20px;border:1px solid #eee;text-align:center}
-body.dark{background:#111;color:#fff}body.dark .card,body.dark .stats,body.dark .admin,body.dark .detail,body.dark .search{background:#222;color:#fff}body.dark .card p{color:#ccc}body.dark .site-header{background:#222}
-.wa-float{position:fixed;bottom:75px;left:12px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:1000;text-decoration:none}
-@media(max-width:700px){.header-main{flex-direction:column;align-items:stretch}.header-logo{justify-content:center;text-align:center}.header-logo-text h1{font-size:28px}.header-nav{justify-content:center}.header-actions{min-width:0;width:100%}.stats{grid-template-columns:1fr 1fr}.admin-wrap{flex-direction:column}.admin-side{width:100%;display:flex;overflow-x:auto;padding:0}.admin-side button{white-space:nowrap;width:auto;border-right:0;border-bottom:4px solid transparent}.admin-stat{grid-template-columns:1fr 1fr}}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial;background:#f4f4f4;color:#111}
+a{text-decoration:none;color:inherit}
+.top{background:#c8102e;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-size:32px;font-weight:900;line-height:1}.logo small{display:block;font-size:11px;letter-spacing:2px}
+nav{display:flex;gap:14px;font-weight:700;font-size:14px;flex-wrap:wrap}nav a.active{border-bottom:3px solid #fff;padding-bottom:3px}
+.ticker{background:#111;color:#fff;display:flex;align-items:center;overflow:hidden}.ticker b{background:#c8102e;padding:10px 14px}.ticker marquee{padding:8px}
+.wrap{max-width:1150px;margin:auto;padding:14px}
+.hero{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.main{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px #0001}
+.main img{width:100%;height:340px;object-fit:cover;display:block}
+.main .p{padding:16px}.main h1{font-size:28px;line-height:1.4;margin:0}.meta{color:#777;font-size:13px;margin-top:10px}
+.side h2{margin:0 0 10px;border-bottom:3px solid #c8102e;padding-bottom:6px}
+.card{background:#fff;display:flex;gap:10px;padding:10px;border-radius:10px;margin-bottom:10px;box-shadow:0 1px 6px #0001}
+.card img{width:90px;height:70px;object-fit:cover;border-radius:8px}.card h3{margin:0;font-size:15px;line-height:1.5}.card span{color:#777;font-size:12px}
+h2.sec{border-right:6px solid #c8102e;padding-right:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.box{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 6px #0001}.box img{width:100%;height:150px;object-fit:cover}.box div{padding:12px}.box h3{margin:0;line-height:1.5}
+.archive{background:#fff;border-radius:10px;padding:16px;margin-top:18px;border:2px solid #c8102e}
+input,textarea,select{width:100%;padding:11px;margin:6px 0;border:1px solid #ccc;border-radius:8px;font-family:inherit}
+button{background:#c8102e;color:#fff;border:0;padding:12px 18px;border-radius:8px;font-weight:800;cursor:pointer;width:100%}
+footer{background:#111;color:#fff;text-align:center;padding:18px;margin-top:18px}
+@media(max-width:800px){.hero,.grid{grid-template-columns:1fr}.logo{font-size:24px}.main h1{font-size:22px}}
 </style>
 </head>
 <body>
-<!-- ===== هيدر جديد زي عدن الغد ===== -->
-<header class="site-header">
-<div class="topbar"><span>جيشان برس - صوت الجنوب يصل للعالم</span><span style="display:flex;gap:6px"><button onclick="toggleDark()">☀️ / 🌙</button><button onclick="openLoginBox()">🔐 دخول</button></span></div>
-<div class="header-main">
-<div class="header-logo" onclick="goHome()"><img src="logo.jpg" onerror="this.onerror=null;this.src='https://jaishan-press-1.vercel.app/logo.jpg'" alt="جيشان برس"><div class="header-logo-text"><h1>جيشان برس</h1><p>يومية مستقلة جامعة - أخبار - مقالات - تقارير</p><b>JAISHAN PRESS</b><br><small>رئيس التحرير: أبوبكر المنصوري</small></div></div>
-<nav class="header-nav" id="mainNav"><button onclick="filterCat('الكل',this)" class="active">الرئيسية</button><span id="navCats"></span><button onclick="openAuthorsPage()">✍️ كُتابنا</button><button onclick="openStaticPage('about')">من نحن</button><button onclick="openStaticPage('contact')">تواصل معنا</button></nav>
-<div class="header-actions"><div class="search"><input id="searchInput" placeholder="ابحث عن خبر..." oninput="doSearch()"><button onclick="doSearch()">بحث</button></div><div class="header-social"><a href="https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36" target="_blank" style="background:#25D366">واتساب</a><a href="https://www.facebook.com/profile.php?id=61593721652626" target="_blank" style="background:#1877F2">فيسبوك</a><a href="https://x.com/JayshanNewsYE" target="_blank" style="background:#000">إكس</a></div></div>
+
+<div class="top">
+<div class="logo">جيشان برس<small>JAISHAN PRESS • رئيس التحرير: أبوبكر المنصوري</small></div>
+<nav><a class="active" href="#">الرئيسية</a><a href="#news">أحدث الأخبار</a><a href="#cats">الأقسام</a><a href="#archive">الأرشيف</a><a href="#add">أضف خبر</a></nav>
 </div>
-</header>
-<div id="homePage">
-<div class="ticker"><b>عاجل الآن</b><div class="ticker-viewport"><div class="ticker-inner" id="jayshanTickerTrack">جاري تحميل آخر الأخبار...</div></div></div>
-<div class="stats"><div>👁️ زوار الموقع<b id="visitors">21480</b></div><div>❤️ إعجابات<b>619</b></div><div>✈️ مشاركات<b>257</b></div><div>📰 أخبار<b id="newsCount">0</b></div></div>
-<div id="loginBox"><h3>🔐 دخول المدير</h3><input type="password" id="adminPass" placeholder="أدخل كلمة السر"><button class="publish" onclick="checkAdminPass()">دخول</button></div>
-<div class="admin" id="adminBox">
-<div class="admin-head"><h3>📺 لوحة تحكم جيشان برس</h3><span>متصل: رئيس التحرير</span></div>
-<div class="admin-wrap">
-<div class="admin-side">
-<button class="active" onclick="adminTab('publish',this)">➕ إضافة خبر جديد</button>
-<button onclick="adminTab('all',this)">📰 كل الأخبار</button>
-<button onclick="adminTab('urgent',this)">🔴 أخبار عاجلة</button>
-<button onclick="adminTab('authors',this)">✍️ إدارة الكتاب</button>
+
+<div class="ticker"><b>عاجل</b><marquee id="ticker">مجلس الوزراء يعتمد حزمة إصلاحات اقتصادية جديدة • تغطية مستمرة على مدار الساعة في جيشان برس</marquee></div>
+
+<div class="wrap">
+<div class="hero">
+<div class="main">
+<img src="logo.jpg" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200'">
+<div class="p"><h1 id="mainTitle">الحكومة تعلن حزمة إصلاحات اقتصادية لتعزيز الاستثمار وتحسين مناخ الأعمال</h1><p>في خطوة تهدف إلى تحفيز النمو الاقتصادي، كشفت الحكومة عن تفاصيل الإصلاحات الجديدة التي تشمل تسهيلات للمستثمرين ودعم المشاريع.</p><div class="meta">قبل 32 دقيقة • اقتصاد • جيشان برس</div></div>
 </div>
-<div class="admin-main">
-<div class="admin-stat"><div>📰 إجمالي الأخبار<b id="statTotal">0</b></div><div>🔴 عاجل<b id="statUrgent">0</b></div><div>📅 اليوم<b id="statToday">0</b></div><div>👁️ زوار<b id="statVisitors">21480</b></div></div>
-<div id="tab-publish">
-<label>✍️ اختر الكاتب</label><select id="authorSelect"><option value="قسم الأخبار - جيشان برس">قسم الأخبار - جيشان برس</option></select>
-<label>عنوان الخبر</label><input id="title" placeholder="عنوان الخبر">
-<label>📺 ملخص الشريط</label><input id="ticker" placeholder="📺 ملخص الشريط (اختياري)">
-<label>تفاصيل الخبر كاملة</label><textarea id="text" rows="6" placeholder="تفاصيل الخبر كاملة..."></textarea>
-<label>رابط صورة الخبر</label><input id="image" placeholder="رابط صورة الخبر (اختياري)">
-<label>📷 أو اختر صورة من جهازك</label><input type="file" id="imageFile" accept="image/*" onchange="uploadImageFile(this)">
-<div id="imagePreview" style="display:none;margin:8px 0"><img id="imagePreviewImg" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px"></div>
-<label>🎬 رابط الفيديو</label><input id="video" placeholder="🎬 رابط الفيديو (اختياري)">
-<label>التصنيف</label><select id="cat"></select>
-<input type="hidden" id="editId">
-<button class="publish" onclick="publishNews()" id="publishBtn">نشر الخبر ✅</button>
-<button onclick="closeAdmin()" style="width:100%;margin-top:8px;padding:10px;border:0;background:#eee;border-radius:8px">إغلاق</button>
+<div class="side" id="news"><h2>أحدث الأخبار</h2><div id="latest"></div></div>
 </div>
-<div id="tab-all" style="display:none"><h4>كل الأخبار:</h4><div id="adminList"></div></div>
-<div id="tab-urgent" style="display:none"><h4>أخبار عاجلة فقط:</h4><div id="adminUrgentList"></div></div>
-<div id="tab-authors" style="display:none">
-<h4>إضافة كاتب جديد</h4>
-<input type="hidden" id="authorEditId"><input id="authorNameInput" placeholder="اسم الكاتب"><input id="authorRoleInput" placeholder="صفته"><input id="authorPhotoInput" placeholder="رابط صورة الكاتب"><button onclick="saveAuthor()" style="width:100%;padding:11px;background:#1a9a3a;color:#fff;border:0;border-radius:8px">حفظ الكاتب ✅</button><div id="authorsList"></div>
+
+<h2 class="sec" id="cats">الأقسام</h2>
+<div class="grid" id="catsGrid"></div>
+
+<div class="archive" id="archive">
+<h2>📂 أرشيف الأخبار - لا تنحذف أبداً</h2>
+<p>كل خبر ينضاف هنا يبقى محفوظ للأبد. حتى لو نزلت 100 خبر جديد، القديم يبقى موجود.</p>
+<input id="search" placeholder="🔍 ابحث في الأرشيف... اكتب كلمة أو تاريخ" oninput="render()">
+<div id="archiveList"></div>
+</div>
+
+<div class="archive" id="add">
+<h2>➕ أضف خبر جديد - بدون حذف القديم</h2>
+<input id="t" placeholder="عنوان الخبر">
+<select id="c"><option>سياسة</option><option>اقتصاد</option><option>رياضة</option><option>ثقافة</option><option>أخبار الجنوب</option></select>
+<textarea id="d" rows="3" placeholder="نص الخبر..."></textarea>
+<input id="img" placeholder="رابط صورة (اختياري)">
+<button onclick="addNews()">نشر الخبر الآن ✅</button>
+<p style="font-size:13px;color:#666">الخبر الجديد بينضاف فوق، والقديم بينزل للأرشيف وما ينحذف.</p>
 </div>
 </div>
-</div>
-</div>
-<h3 class="section-title">تصفح حسب التصنيف</h3><div id="catsRow" class="catsRow" style="padding:0 10px"></div>
-<div class="section-title" id="sectionTitle">آخر الأخبار</div><div id="newsList"></div>
-</div>
-<div id="detailPage" style="display:none"><button class="back" onclick="goHome()">⬅ رجوع</button><div class="detail"><div id="dMedia"></div><div class="d-body"><span class="badge" id="dCat"></span><h1 id="dTitle"></h1><div id="dMeta" style="color:#777;font-size:13px"></div><p id="dText"></p><button onclick="shareWA()" style="width:100%;padding:12px;background:#25D366;color:#fff;border:0;border-radius:8px;margin-top:10px">💬 مشاركة واتساب</button></div></div></div>
-<div id="authorsPage" style="display:none"><button class="back" onclick="goHome()">⬅ رجوع</button><div id="authorsGrid" style="padding:10px"></div></div>
-<div id="authorPage" style="display:none"><button class="back" onclick="goHome()">⬅ رجوع</button><div style="background:#fff;margin:10px;padding:18px;border:1px solid #eee;text-align:center"><h2 id="aName"></h2><p id="aRole"></p><p id="aCount"></p></div><div id="authorNewsList"></div></div>
-<div id="staticPage" style="display:none"><button class="back" onclick="goHome()">⬅ رجوع</button><div class="detail"><div class="d-body" id="staticContent"></div></div></div>
-<div class="footer"><b>جيشان برس | JAISHAN PRESS</b><br>صوت الجنوب يصل للعالم - يومية مستقلة جامعة<br>جميع الحقوق محفوظة © جيشان برس 2026 | رئيس التحرير: أبوبكر المنصوري<br>📧 bkra7567@gmail.com</div>
-<div class="bottom"><button style="background:#25D366" onclick="window.open('https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36','_blank')">واتساب</button><button style="background:#1877F2" onclick="window.open('https://www.facebook.com/profile.php?id=61593721652626','_blank')">فيسبوك</button><button style="background:#000" onclick="window.open('https://x.com/JayshanNewsYE','_blank')">إكس</button><button style="background:#A6192E" onclick="window.open('mailto:bkra7567@gmail.com')">راسلنا</button></div>
-<a href="https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36" target="_blank" class="wa-float">💬</a>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, push, onValue, remove, update, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-const firebaseConfig = { apiKey: "AIzaSyB5R0Ht53nNY9hRJYT7RhFv7xIV5MG4_XE", authDomain: "jaishan-press-4349a.firebaseapp.com", databaseURL: "https://jaishan-press-4349a-default-rtdb.firebaseio.com", projectId: "jaishan-press-4349a", storageBucket: "jaishan-press-4349a.firebasestorage.app", messagingSenderId: "719471479355", appId: "1:719471479355:web:03cc01c2935836383f6a1e", measurementId: "G-P988SZFFBH" };
-const app = initializeApp(firebaseConfig); const db = getDatabase(app);
-let allNews=[],allKeys=[],currentNews=null,currentKey=null,currentFilter='الكل',currentAuthor='';
-let allCats=['عاجل','أخبار الجنوب','أخبار العالم','مقالات','تقارير','رياضة','اقتصاد','فيديوهات']; let catsKeys={}; let allAuthors={};
-const ADMIN_PASS_HASH='895233d18eef2e8e475b7aa51ad662577fb644fdc033952701e244394fc96fc8'; let isAdmin=sessionStorage.getItem('jaishan_admin')==='yes';
-function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-async function sha256Hex(str){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
-window.toggleDark=()=>document.body.classList.toggle('dark');
-window.adminTab=function(tab,el){document.querySelectorAll('.admin-side button').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');['publish','all','urgent','authors'].forEach(t=>{document.getElementById('tab-'+t).style.display=(t===tab?'block':'none')})};
-window.openLoginBox=function(){if(isAdmin){document.getElementById('adminBox').style.display='block';renderAdmin();window.scrollTo(0,0);return}document.getElementById('loginBox').style.display='block'};
-window.checkAdminPass=async function(){const v=document.getElementById('adminPass').value;const h=await sha256Hex(v);if(h===ADMIN_PASS_HASH){isAdmin=true;sessionStorage.setItem('jaishan_admin','yes');document.getElementById('loginBox').style.display='none';document.getElementById('adminBox').style.display='block';renderAdmin()}else alert('كلمة السر خطأ')};
-window.closeAdmin=()=>document.getElementById('adminBox').style.display='none';
-window.uploadImageFile=function(input){let file=input.files[0];if(!file)return;let reader=new FileReader();reader.onload=function(e){document.getElementById('image').value=e.target.result;let p=document.getElementById('imagePreview');let im=document.getElementById('imagePreviewImg');if(p&&im){p.style.display='block';im.src=e.target.result;}};reader.readAsDataURL(file)};
-window.doSearch=function(){const q=document.getElementById('searchInput').value.trim();if(!q){renderFiltered();return}renderList(allNews.filter(n=>(n.title||'').includes(q)||(n.text||'').includes(q)))};
-function renderCats(){const nav=document.getElementById('navCats');if(nav)nav.innerHTML=allCats.map(c=>`<button onclick="filterCat('${c}',this)">${c}</button>`).join('');const sel=document.getElementById('cat');if(sel)sel.innerHTML=allCats.map(c=>`<option>${c}</option>`).join('');const row=document.getElementById('catsRow');if(row)row.innerHTML=allCats.map(c=>`<button onclick="filterCat('${c}',null)">${c}</button>`).join('')}
-window.filterCat=function(cat,el){currentFilter=cat;document.querySelectorAll('#mainNav button').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');document.getElementById('sectionTitle').innerText=cat==='الكل'?'آخر الأخبار':cat;renderFiltered()};
-function renderFiltered(){let list=currentFilter==='الكل'?allNews:allNews.filter(n=>n.cat===currentFilter);renderList(list)}
-onValue(ref(db,'categories'),(snap)=>{const d=snap.val();if(!d)return;catsKeys={};allCats=[];Object.keys(d).forEach(k=>{if(d[k].name){allCats.push(d[k].name);catsKeys[d[k].name]=k}});renderCats()});renderCats();
-function getAuthorByName(name){let f=null;Object.values(allAuthors).forEach(a=>{if(a.name===name)f=a});if(!f&&name==='قسم الأخبار - جيشان برس')f={name:'قسم الأخبار - جيشان برس',role:'قسم الأخبار',photo:''};return f}
-window.saveAuthor=function(){if(!isAdmin)return alert('غير مصرح');const name=document.getElementById('authorNameInput').value.trim();const role=document.getElementById('authorRoleInput').value.trim()||'كاتب';const photo=document.getElementById('authorPhotoInput').value.trim();if(!name)return alert('اكتب اسم الكاتب');push(ref(db,'authors'),{name,role,photo,bio:'',fb:'',wa:''});alert('تم حفظ الكاتب ✅')};
-onValue(ref(db,'authors'),(snap)=>{allAuthors=snap.val()||{};const sel=document.getElementById('authorSelect');if(sel){let h=`<option value="قسم الأخبار - جيشان برس">قسم الأخبار - جيشان برس</option><option value="أبوبكر المنصوري">أبوبكر المنصوري - رئيس التحرير</option>`;Object.values(allAuthors).forEach(a=>{if(a.name!=='أبوبكر المنصوري' && a.name!=='قسم الأخبار - جيشان برس')h+=`<option value="${escapeHtml(a.name)}">${escapeHtml(a.name)} - ${escapeHtml(a.role||'كاتب')}</option>`});sel.innerHTML=h}const box=document.getElementById('authorsList');if(box)box.innerHTML=Object.keys(allAuthors).map(k=>`<div class="admin-item"><b>${escapeHtml(allAuthors[k].name)}</b><button onclick="deleteAuthor('${k}')" style="background:#c00000;color:#fff;border:0;padding:6px 10px;border-radius:6px">حذف</button></div>`).join('')});
-window.deleteAuthor=(k)=>{if(confirm('حذف الكاتب؟'))remove(ref(db,'authors/'+k))};
-window.publishNews=function(){if(!isAdmin)return alert('غير مصرح');const title=document.getElementById('title').value.trim();const author=document.getElementById('authorSelect').value||'قسم الأخبار - جيشان برس';const ticker=document.getElementById('ticker').value.trim();const text=document.getElementById('text').value.trim();let image=document.getElementById('image').value.trim();const a=getAuthorByName(author);if(!image&&a&&a.photo)image=a.photo;if(!image)image='logo.jpg';const video=document.getElementById('video').value.trim();const cat=document.getElementById('cat').value;const editId=document.getElementById('editId').value;if(!title||!text)return alert('اكتب العنوان والخبر');if(editId){update(ref(db,'news/'+editId),{title,author,ticker,tickerText:ticker,text,image,video,cat});alert('تم التعديل ✅')}else{push(ref(db,'news'),{title,author,ticker,tickerText:ticker,text,image,video,cat,time:Date.now(),views:0});alert('تم النشر ✅')}['title','ticker','text','image','video','editId'].forEach(id=>document.getElementById(id).value='');let pf=document.getElementById('imageFile');if(pf)pf.value='';let pv=document.getElementById('imagePreview');if(pv)pv.style.display='none';document.getElementById('publishBtn').innerText='نشر الخبر ✅'};
-window.editNews=function(key){const idx=allKeys.indexOf(key);const n=allNews[idx];document.getElementById('title').value=n.title;document.getElementById('authorSelect').value=n.author||'قسم الأخبار - جيشان برس';document.getElementById('ticker').value=n.ticker||'';document.getElementById('text').value=n.text;document.getElementById('image').value=n.image;document.getElementById('video').value=n.video||'';document.getElementById('cat').value=n.cat;document.getElementById('editId').value=key;document.getElementById('publishBtn').innerText='حفظ التعديل 💾';window.adminTab('publish',document.querySelector('.admin-side button'));window.scrollTo(0,0)};
-window.deleteNews=(key)=>{if(confirm('حذف الخبر؟'))remove(ref(db,'news/'+key))};
-function renderAdmin(){const box=document.getElementById('adminList');if(!box)return;box.innerHTML=allNews.map((n,i)=>{let k=allKeys[i];return `<div class="admin-item"><b>${escapeHtml(n.title)} - ${n.cat}</b><div><button onclick="editNews('${k}')" style="background:#ffcc00;border:0;padding:6px 10px;border-radius:6px">تعديل</button> <button onclick="deleteNews('${k}')" style="background:#c00000;color:#fff;border:0;padding:6px 10px;border-radius:6px">حذف</button></div></div>`}).join('');const urg=document.getElementById('adminUrgentList');if(urg){let list=allNews.filter(n=>n.cat==='عاجل');urg.innerHTML=list.length?list.map(n=>`<div class="admin-item"><b>${escapeHtml(n.title)}</b></div>`).join(''):'<p>لا توجد أخبار عاجلة</p>'};const total=document.getElementById('statTotal');if(total)total.innerText=allNews.length;const su=document.getElementById('statUrgent');if(su)su.innerText=allNews.filter(n=>n.cat==='عاجل').length;const st=document.getElementById('statToday');if(st){let today=new Date().toDateString();st.innerText=allNews.filter(n=>new Date(n.time).toDateString()===today).length}}
-function renderList(list){const box=document.getElementById('newsList');box.innerHTML='';if(!list.length){box.innerHTML='<p style="text-align:center;color:#888;padding:20px">لا توجد أخبار</p>';return}list.forEach((n,i)=>{let media=n.video?`<div>🎬 فيديو - <a href="${n.video}" target="_blank" style="color:#fff">شاهد</a></div>`:`<img class="main" src="${n.image}" onerror="this.src='logo.jpg'">`;box.innerHTML+=`<div class="card" onclick="openNewsByKey('${allKeys[allNews.indexOf(n)]}')"><div class="thumb">${media}</div><div class="c-body"><div style="display:flex;justify-content:space-between"><span class="badge">${n.cat}</span><span class="date">${new Date(n.time).toLocaleDateString('ar')}</span></div><h2>${escapeHtml(n.title)}</h2><p>${escapeHtml((n.text||'').substring(0,120))}...</p><div style="font-size:12px;color:#777">👁️ ${n.views||0} | ✍️ ${escapeHtml(n.author||'قسم الأخبار - جيشان برس')}</div></div></div>`})}
-function buildTicker(list){const t=document.getElementById('jayshanTickerTrack');if(!t)return;let sorted=[...list].sort((a,b)=>{let au=(a.cat==='عاجل')?0:1;let bu=(b.cat==='عاجل')?0:1;if(au!==bu)return au-bu;return (b.time||0)-(a.time||0)});let items=sorted.slice(0,20).map(n=>{let title=n.ticker||n.tickerText||n.title||'خبر جديد';let author=n.author||'جيشان برس';let cat=n.cat||'عاجل';return `<span><i>${escapeHtml(cat)} ///</i>${escapeHtml(title)} - بقلم: ${escapeHtml(author)}</span>`});if(!items.length)items=['<span><i>جيشان برس ///</i>صوت الجنوب يصل للعالم - بقلم: جيشان برس</span>'];let links=`<span><a class="link-wa" href="https://whatsapp.com/channel/0029Vb8qqc3D38CMaMoMPf36" target="_blank">💬 تابعنا على واتساب - جيشان برس</a></span><span><a class="link-x" href="https://x.com/JayshanNewsYE" target="_blank">𝕏 تابعنا على إكس @JayshanNewsYE</a></span><span><a class="link-fb" href="https://www.facebook.com/profile.php?id=61593721652626" target="_blank">📘 تابعنا على فيسبوك - جيشان برس</a></span><span><a class="link-mail" href="mailto:bkra7567@gmail.com">📧 راسلنا: bkra7567@gmail.com</a></span>`;let one=items.join('')+links;t.innerHTML=one+one}
-window.openNewsByKey=function(key){const idx=allKeys.indexOf(key);if(idx===-1)return;const n=allNews[idx];currentNews=n;currentKey=key;document.title=n.title+' | جيشان برس';let ogImg=document.querySelector('meta[property="og:image"]');if(ogImg)ogImg.setAttribute('content',n.image||'logo.jpg');let ogTitle=document.querySelector('meta[property="og:title"]');if(ogTitle)ogTitle.setAttribute('content',n.title);document.getElementById('homePage').style.display='none';document.getElementById('detailPage').style.display='block';document.getElementById('dMedia').innerHTML=n.video?`<div style="background:#000;color:#fff;padding:40px;text-align:center"><a href="${n.video}" target="_blank" style="color:#fff">▶️ شاهد الفيديو</a></div><img src="${n.image}" onerror="this.src='logo.jpg'">`:`<img src="${n.image}" onerror="this.src='logo.jpg'">`;document.getElementById('dTitle').innerText=n.title;document.getElementById('dText').innerText=n.text;document.getElementById('dCat').innerText=n.cat;document.getElementById('dMeta').innerText=new Date(n.time).toLocaleDateString('ar')+' | ✍️ '+(n.author||'قسم الأخبار - جيشان برس')+' | 👁️ '+(n.views||0);try{runTransaction(ref(db,'news/'+key+'/views'),c=>(c||0)+1)}catch(e){}window.scrollTo(0,0)};
-window.goHome=function(){['detailPage','authorPage','authorsPage','staticPage'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('homePage').style.display='block';document.title='جيشان برس | JAISHAN PRESS';let ogImg=document.querySelector('meta[property="og:image"]');if(ogImg)ogImg.setAttribute('content','logo.jpg');window.scrollTo(0,0)};
-window.openAuthorsPage=function(){document.getElementById('homePage').style.display='none';document.getElementById('authorsPage').style.display='block';const g=document.getElementById('authorsGrid');let list=[{name:'قسم الأخبار - جيشان برس',role:'قسم الأخبار'},{name:'أبوبكر المنصوري',role:'رئيس التحرير'}];Object.values(allAuthors).forEach(a=>{if(a.name!=='أبوبكر المنصوري' && a.name!=='قسم الأخبار - جيشان برس')list.push(a)});g.innerHTML=list.map(a=>`<div onclick="openAuthor('${escapeHtml(a.name)}')" style="background:#fff;padding:14px;border:1px solid #eee;text-align:center;cursor:pointer;margin-bottom:10px"><b>${escapeHtml(a.name)}</b><br><span style="color:#777;font-size:12px">${escapeHtml(a.role||'')}</span></div>`).join('')};
-window.openAuthor=function(name){currentAuthor=name;document.getElementById('homePage').style.display='none';document.getElementById('authorPage').style.display='block';document.getElementById('aName').innerText=name;let a=getAuthorByName(name);document.getElementById('aRole').innerText=a?.role||'كاتب';let list=allNews.filter(n=>(n.author||'قسم الأخبار - جيشان برس')===name);document.getElementById('aCount').innerText=list.length+' خبر ومقال';document.getElementById('authorNewsList').innerHTML=list.map(n=>`<div class="card" onclick="openNewsByKey('${allKeys[allNews.indexOf(n)]}')"><div class="c-body"><h2>${escapeHtml(n.title)}</h2><p>${escapeHtml((n.text||'').substring(0,120))}</p></div></div>`).join('')||'<p style="text-align:center;color:#888">لا توجد أعمال بعد</p>'};
-window.openStaticPage=function(t){document.getElementById('homePage').style.display='none';document.getElementById('staticPage').style.display='block';document.getElementById('staticContent').innerHTML=t==='about'?`<h1>من نحن</h1><p>جيشان برس موقع إخباري يمني جنوبي مستقل، من مديرية جيشان بمحافظة أبين. رئيس التحرير: الصحفي أبوبكر المنصوري</p>`:`<h1>تواصل معنا</h1><p>📧 bkra7567@gmail.com<br>💬 واتساب: قناة جيشان برس<br>رئيس التحرير: الصحفي أبوبكر المنصوري</p>`};
-window.shareWA=function(){if(currentNews)window.open('https://wa.me/?text='+encodeURIComponent(currentNews.title+'\n\n'+location.origin+location.pathname+'?id='+currentKey),'_blank')};
-(function(){const BASE=21480;const today=new Date().toDateString();const last=localStorage.getItem('jaishan_real_visit_date');const isNew=last!==today;if(isNew)localStorage.setItem('jaishan_real_visit_date',today);const r=ref(db,'stats/realVisitors');if(isNew){runTransaction(r,c=>(c||0)+1).then(res=>{document.getElementById('visitors').innerText=BASE+(res.snapshot.val()||0);let sv=document.getElementById('statVisitors');if(sv)sv.innerText=BASE+(res.snapshot.val()||0)})}else{onValue(r,s=>{document.getElementById('visitors').innerText=BASE+(s.val()||0);let sv=document.getElementById('statVisitors');if(sv)sv.innerText=BASE+(s.val()||0)},{onlyOnce:true})}})();
-onValue(ref(db,'news'),(snap)=>{const d=snap.val();if(!d){allNews=[];allKeys=[];buildTicker([]);renderList([]);return}allKeys=Object.keys(d).reverse();allNews=allKeys.map(k=>d[k]);document.getElementById('newsCount').innerText=allNews.length;buildTicker(allNews);renderFiltered();renderAdmin()});
+
+<footer>جيشان برس - جميع الحقوق محفوظة • رئيس التحرير: أبوبكر المنصوري<br>واتساب • فيسبوك • إكس • يوتيوب</footer>
+
+<script>
+let defaults=[
+{title:"تحركات دبلوماسية مكثفة لحلحلة التوتر في المنطقة بعد تصاعد الأحداث",cat:"سياسة",time:"قبل ساعة",img:"https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600",desc:"تحركات مكثفة لاحتواء التوتر."},
+{title:"البورصة تغلق على ارتفاع بدعم من قطاعي البنوك والطاقة",cat:"اقتصاد",time:"قبل ساعتين",img:"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600",desc:"ارتفاع جماعي في المؤشرات."},
+{title:"منتخبنا يتأهل إلى نصف نهائي البطولة بعد فوز مثير بركلات الترجيح",cat:"رياضة",time:"قبل 3 ساعات",img:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600",desc:"فوز تاريخي للمنتخب."},
+{title:"معرض الكتاب الدولي يستقطب آلاف الزوار في يومه الثالث",cat:"ثقافة",time:"قبل 4 ساعات",img:"https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600",desc:"إقبال كبير على المعرض."},
+{title:"مجلس النواب يناقش مشروع قانون جديد لتعزيز الشفافية",cat:"سياسة",time:"قبل 6 ساعات",img:"https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?w=600",desc:"جلسة نقاش موسعة."},
+{title:"أسعار النفط ترتفع وسط توقعات بزيادة الطلب العالمي",cat:"اقتصاد",time:"قبل 7 ساعات",img:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600",desc:"توقعات إيجابية للأسواق."}
+];
+let saved=JSON.parse(localStorage.getItem('jaishan_news')||'[]');
+let all=[...saved,...defaults];
+function render(){
+let q=(document.getElementById('search').value||'').toLowerCase();
+let filt=all.filter(n=>(n.title+n.cat).toLowerCase().includes(q));
+document.getElementById('latest').innerHTML=filt.slice(0,4).map(n=>`<div class="card"><img src="${n.img}"><div><h3>${n.title}</h3><span>${n.time} • ${n.cat}</span></div></div>`).join('');
+document.getElementById('catsGrid').innerHTML=filt.slice(0,6).map(n=>`<div class="box"><img src="${n.img}"><div><h3>${n.title}</h3><span>${n.time} • ${n.cat}</span><p>${n.desc||''}</p></div></div>`).join('');
+document.getElementById('archiveList').innerHTML=filt.map((n,i)=>`<div class="card"><img src="${n.img}"><div><h3>${i+1}. ${n.title}</h3><span>${n.time} • ${n.cat} • محفوظ للأبد ✅</span></div></div>`).join('')||'<p>لا توجد نتائج</p>';
+}
+function addNews(){
+let t=document.getElementById('t').value.trim(); if(!t){alert('اكتب عنوان الخبر أولاً');return;}
+let n={title:t,cat:document.getElementById('c').value,time:'الآن • '+new Date().toLocaleDateString('ar'),img:document.getElementById('img').value||'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600',desc:document.getElementById('d').value};
+saved.unshift(n); localStorage.setItem('jaishan_news',JSON.stringify(saved)); all=[...saved,...defaults];
+document.getElementById('mainTitle').innerText=t; render(); alert('تم نشر الخبر ✅ والقديم محفوظ في الأرشيف');
+document.getElementById('t').value='';document.getElementById('d').value='';
+}
+render();
 </script>
 </body>
 </html>
