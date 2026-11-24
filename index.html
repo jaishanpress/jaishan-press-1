@@ -195,3 +195,41 @@ function getAuthorByName(name){let f=null;Object.values(allAuthors).forEach(a=>{
 window.syncAuthorImage=function(){const sel=document.getElementById('authorSelect');const img=document.getElementById('image');if(!sel||!img)return;const a=getAuthorByName(sel.value);if(a&&a.photo&&!img.value)img.value=a.photo};
 function renderAuthorSelect(){const sel=document.getElementById('authorSelect');if(!sel)return;const cur=sel.value;let h=`<option value="أبوبكر المنصوري">أبوبكر المنصوري - رئيس التحرير</option>`;Object.values(allAuthors).forEach(a=>{if(a.name&&a.name!=='أبوبكر المنصوري')h+=`<option value="${esc(a.name)}">${esc(a.name)} - ${esc(a.role||'كاتب')}</option>`});sel.innerHTML=h;if(cur)sel.value=cur}
 function renderAuthorsAdmin(){const box=document.getElementById('authorsList');if(!box)return;box.innerHTML='';Object.keys(allAuthors).forEach(k=>{const a=allAuthors[k];box.innerHTML+=`<div style="background:#f9f9f9;border:1px solid #eee;padding:10px;border-radius:8px;margin:8px 0;display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${esc(a.name)} - ${esc(a.role||'')}</b><div style="display:flex;gap:5px"><button style="background:#ffcc00;border:0;padding:7px 10px;border-radius:6px" onclick="editAuthor('${k}')">✏️ تعديل</button><button style="background:#1877F2;color:#fff;border:0;padding:7px 10px;border-radius:6px" onclick="openAuthor('${esc(a.name)}')">عرض</button><button style="background:#c00000;color:#fff;border:0;padding:7px 10px;border-radius:6px" onclick="deleteAuthor('${k}')">حذف</button></div></div>`})}
+  sel.value=currentAuthorFilter||'';
+  sel.onchange=()=>{currentAuthorFilter=sel.value;showAuthorPage();};
+}
+function renderAuthorsAdmin(){
+  const box=el('authorsAdmin'); if(!box)return;
+  box.innerHTML=authors.map(a=>`<div style="display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #eee;border-radius:10px;padding:8px;margin-bottom:8px">
+  <img src="${a.img||'https://via.placeholder.com/60'}" style="width:48px;height:48px;border-radius:50%;object-fit:cover">
+  <div style="flex:1"><b>${a.name}</b><div style="font-size:12px;color:#666">${a.role||''}</div></div>
+  <button class="btn ghost" onclick="editAuthor('${a.id}')">تعديل</button>
+  <button class="btn danger" onclick="delAuthor('${a.id}')">حذف</button></div>`).join('')||'<p>لا يوجد كُتّاب بعد</p>';
+}
+function editAuthor(id){
+  const a=authors.find(x=>x.id==id); if(!a)return;
+  el('authorName').value=a.name||''; el('authorRole').value=a.role||'';
+  el('authorBio').value=a.bio||''; el('authorImg').value=a.img||'';
+  el('authorId').value=a.id; window.scrollTo({top:0,behavior:'smooth'});
+}
+function delAuthor(id){
+  if(!confirm('حذف الكاتب؟'))return;
+  authors=authors.filter(x=>x.id!=id); saveAuthors(); renderAuthorsAdmin(); renderAuthorSelect(); renderAuthors();
+}
+function saveAuthors(){ try{localStorage.setItem('jaishan_authors',JSON.stringify(authors))}catch(e){} }
+async function loadData(){
+  try{
+    const s=await get(ref(db,'posts')); if(s.exists()) posts=Object.values(s.val());
+  }catch(e){}
+  try{
+    const s2=await get(ref(db,'authors')); if(s2.exists()) authors=Object.values(s2.val());
+  }catch(e){}
+  renderCats(); renderNews(); renderAuthors(); renderAuthorSelect(); renderAuthorsAdmin();
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  loadData();
+  showPage('home');
+});
+</script>
+</body>
+</html>
