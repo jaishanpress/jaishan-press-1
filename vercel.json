@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/news/:id", "destination": "/api/index.js?id=:id" }
+  ]
+}
