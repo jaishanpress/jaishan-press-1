@@ -44,13 +44,13 @@ nav button.active,nav button:hover{background:#A6192E}
 .ticker{display:flex;background:#000;color:#fff;overflow:hidden;border-bottom:2px solid #A6192E;align-items:stretch}
 .ticker b{background:#A6192E;padding:12px 14px;white-space:nowrap;font-size:14px;z-index:2;flex-shrink:0}
 .ticker-viewport{overflow:hidden;flex:1;direction:ltr;display:flex;align-items:center;min-width:0}
-.ticker-inner{display:flex;white-space:nowrap;width:max-content;animation:sc 90s linear infinite;will-change:transform;direction:ltr}
-.ticker-inner:hover{animation-play-state:paused}
+.ticker-inner{display:flex;white-space:nowrap;width:max-content;animation:ticker 90s linear infinite;will-change:transform;direction:ltr;backface-visibility:hidden}
+.ticker-inner,.ticker-inner:hover{animation-play-state:running}
 .ticker-inner span{padding:0 28px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:6px;direction:rtl}
 .ticker-inner span i{font-style:normal;color:#FFD100;padding-left:8px}
 .ticker-inner a{color:#fff;text-decoration:none}
 .ticker-inner .link-wa{color:#25D366}.ticker-inner .link-x{color:#fff}.ticker-inner .link-fb{color:#5ea2ff}.ticker-inner .link-mail{color:#FFD100}
-@keyframes sc{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes ticker { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 .stats{background:#f7f7f7;margin:12px;border:1px solid #eee;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:14px;gap:10px}
 .stats div{font-size:12px;color:#666}.stats b{display:block;font-size:20px;color:#A6192E;margin-top:4px}
 .section-title{margin:18px 12px 6px;font-size:20px;font-weight:900;border-right:5px solid #A6192E;padding-right:10px}
