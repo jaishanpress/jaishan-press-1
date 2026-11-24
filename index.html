@@ -121,4 +121,4 @@ window.shareWA=function(){if(currentNews)window.open('https://wa.me/?text='+enco
 onValue(ref(db,'news'),(snap)=>{const d=snap.val();if(!d){allNews=[];allKeys=[];buildTicker([]);renderList([]);return}allKeys=Object.keys(d).reverse();allNews=allKeys.map(k=>d[k]);document.getElementById('newsCount').innerText=allNews.length;buildTicker(allNews);renderFiltered();renderAdmin()});
 </script>
 </body>
-                                                                                                                                             </html>
+                                                                                                                                                                                                         </html>
